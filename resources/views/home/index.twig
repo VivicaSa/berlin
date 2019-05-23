@@ -1,0 +1,22 @@
+{% extends 'app.twig' %}
+
+{% block content %}
+
+	<div class="container">
+		<h1 class="mb-3">{{ mainTitle }}</h1>
+		<div class="row text-lg-left">			
+		    {% for result in results %}
+				<div class="col-lg-3 col-md-4 col-6 mb-4">
+				<div class="card flex-fill" style="width: 16rem;">
+					<img src="{{ result.img }}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">{{ result.title }}</h5>
+						<p class="card-text"><small>{{ result.date }} <br/> {{ result.place }}</small></p>
+					</div>
+				</div>
+				</div>
+			{% endfor %}			
+		</div>
+	</div>
+
+{% endblock %}
